@@ -2,8 +2,8 @@ import requests
 URL = 'http://data.fixer.io/api/latest?access_key=7370ff2962d49abefc56c32f5bc74aa8'
 
 def currency_conversion():
-    from_currency = input('From Currency :')
-    to_currency   = input('To Currency   :')
+    from_currency = input('From Currency :').upper()
+    to_currency   = input('To Currency   :').upper()
     amount    = int(input('Amount        :'))
     response = requests.get(URL)
     rate = response.json()['rates'][from_currency]
